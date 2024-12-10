@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
+<link rel="stylesheet" href="{% static 'css/global.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.build.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+
+<div class="main-wrapper">
+  {% comment %}
+  hero
+  {% endcomment %}
+  <div class="hero mx-auto">
+    <div class="overlap">
+      <div class="overlap-group">
+        <div class="btn-next-prev">
+          <div class="next"><img class="img" src="{% static 'img/home/chevron-right.svg' %}" /></div>
+          <div class="previous"><img class="img" src="{% static 'img/home/chevron-left.svg' %}" /></div>
+        </div>
+        <div class="heading">
+          <div class="AUTO-MAINTENANCE">AUTO MAINTENANCE<br />&amp; REPAIR SERVICE</div>
+          <button class="button">
+            <div class="take-a-tour">TAKE A TOUR</div>
+            <div class="circle"><img class="img" src="{% static 'img/home/add.svg' %}" /></div>
+          </button>
+        </div>
+      </div>
+      <div class="navbar">
+        <div class="menu">
+          <div class="rectangle"></div>
+          <div class="div"></div>
+          <div class="frame">
+            <div class="rectangle"></div>
+          </div>
+        </div>
+        <div class="group">
+          <div class="XDG-logo-black">
+            <div class="overlap-group-wrapper">
+              <div class="div-2">
+                <div class="group-wrapper">
+                  <div class="div-2"><img class="vector" src="{% static 'img/home/vector.svg' %}" /></div>
+                </div>
+                <img class="vector-2" src="{% static 'img/home/vector-1.svg' %}" />
+                <img class="vector-3" src="{% static 'img/home/vector-2.svg' %}" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="account-support">
+          <img class="img" src="{% static 'img/home/user-3-line.svg' %}" />
+          <div class="divider"></div>
+          <img class="img" src="{% static 'img/home/customer-service-2-line.svg' %}" />
+        </div>
+      </div>
+      <div class="brand-logo">
+        <div class="mercedes-benz-wrapper"><img class="BMW" src="{% static 'img/home/mercedes-benz.png' %}" /></div>
+        <div class="img-wrapper"><img class="BMW" src="{% static 'img/home/bmw.png' %}" /></div>
+        <div class="ford-wrapper"><img class="ford" src="{% static 'img/home/ford.png' %}" /></div>
+        <div class="audi-wrapper"><img class="audi" src="{% static 'img/home/audi.png' %}" /></div>
+        <div class="rolls-royce-wrapper"><img class="audi" src="{% static 'img/home/rolls-royce.png' %}" /></div>
+        <div class="img-wrapper"><img class="mazda" src="{% static 'img/home/mazda.png' %}" /></div>
+        <div class="nissan-wrapper"><img class="nissan" src="{% static 'img/home/nissan.png' %}" /></div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %}
+  Products
+  {% endcomment %}
+
+  <div class="product mx-auto mt-[60px]">
+    <div class="heading">
+      <div class="indicator">
+        <div class="rectangle"></div>
+        <div class="our-services">OUR SERVICES</div>
+      </div>
+      <div class="text-wrapper">CARS SERVICES</div>
+    </div>
+    <div class="div">
+      <div class="div-wrapper top-[80px] left-[0px]"><img class="electric-cars"
+          src="{% static 'img/products/polish.png' %}" />
+        <div class="text-wrapper-2">Electric Cars</div>
+      </div>
+      <div class="div-wrapper top-[0px] left-[440px]"><img class="electric-cars"
+          src="{% static 'img/products/spray.png' %}" />
+        <div class="text-wrapper-2">SUV Cars</div>
+        <div class="button"><img class="add" src="{% static 'img/products/add.svg' %}" /></div>
+      </div>
+      <div class="div-wrapper top-[80px] left-[880px]"><img class="electric-cars"
+          src="{% static 'img/products/detail.png' %}" />
+        <div class="text-wrapper-2">Super Cars</div>
+      </div>
+
+    </div>
+  </div>
+
+  {% comment %}
+  Services
+  {% endcomment %}
+
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-[40px] w-100vw max-h-[100%] md:w-[1280px] md:max-h-[691px] mx-auto mt-[60px]">
+    <div class="col">
+      <div class="relative w-[400px] h-[276px] overflow-hidden">
+        <div
+          class="absolute top-[116px] left-0 [font-family:'Orbitron',Helvetica] font-bold text-white text-[21.6px] tracking-[0] leading-[30.1px] whitespace-nowrap">
+          BRAKE REPAIR
+        </div>
+
+        <img class="absolute w-[401px] h-0.5 top-0 left-0 object-cover" src="{% static 'img/services/brake-repair/line.svg' %}" />
+
+        <p
+          class="absolute w-[325px] top-[165px] left-0 [font-family:'Mulish',Helvetica] font-normal text-[#ececec] text-[15.1px] tracking-[0] leading-[20.7px] text-left">
+          Eget velit aliquet sagittis id consectetur. Elit ut aliquam purus sit amet luctus. Odio eu feugiat pretium
+          nibh ipsum consequat nisl vel</p>
+
+        <img class="absolute w-[57px] h-[57px] top-[42px] left-0" alt="Brake Repair"
+          src="{% static 'img/services/brake-repair/brake-repair.png' %}" />
+
+        <div class="w-[161px] h-[21px] bg-[#161616] !absolute !left-0 !bg-[unset] !w-[152px] !top-[255px]">
+          <div class="inline-flex items-center gap-2.5 relative !gap-[9.41px]">
+            <div class="relative w-[22px] h-5 !h-[18.82px] !w-[20.82px]">
+              <div class="relative w-5 h-5 bg-[100%_100%] !h-[19px]  !w-[19px]"
+                style="background-image: url('{% static 'img/services/brake-repair/bg-1.svg' %}')">
+                <div
+                  class="absolute w-[9px] top-1 left-1.5  font-normal text-[#ececec] text-[13px] text-center tracking-[0.13px] leading-[normal] !tracking-[0.12px] !text-[12.2px] !w-2"
+                  style="font-family:'Font Awesome 5 Pro-Regular',Helvetica;">
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative w-fit mt-[-1.00px] [font-family:'Chakra Petch',Helvetica] font-medium text-white text-base tracking-[0] leading-[normal] !mt-[-0.94px] !text-[15.1px]">
+              DETAILS SERVICE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="relative w-[401px] h-[276px] overflow-hidden">
+        <div
+          class="absolute top-[116px] left-0 [font-family:'Orbitron',Helvetica] font-bold text-white text-[21.6px] tracking-[0] leading-[30.1px] whitespace-nowrap">
+          ENGINE REPAIR
+        </div>
+
+        <img class="absolute w-[401px] h-0.5 top-0 left-0 object-cover" src="{% static 'img/services/engine-repair/line.svg' %}" />
+
+        <p
+          class="absolute w-[325px] top-[165px] left-0 [font-family:'Mulish',Helvetica] font-normal text-[#ececec] text-[15.1px] tracking-[0] leading-[20.7px] text-left">
+          Etiam erat velit scelerisque in. Posuere morbi leo urna molestie at elementum eu. Placerat in egestas erat imperdiet sed euismod</p>
+
+        <img class="absolute w-[57px] h-[57px] top-[42px] left-0" alt="Engine Repair"
+          src="{% static 'img/services/engine-repair/vector.svg' %}" />
+
+        <div class="w-[161px] h-[21px] bg-[#161616] !absolute !left-0 !bg-[unset] !w-[152px] !top-[255px]">
+          <div class="inline-flex items-center gap-2.5 relative !gap-[9.41px]">
+            <div class="relative w-[22px] h-5 !h-[18.82px] !w-[20.82px]">
+              <div class="relative w-5 h-5 bg-[100%_100%] !h-[19px]  !w-[19px]"
+                style="background-image: url('{% static 'img/services/engine-repair/bg-1.svg' %}')">
+                <div
+                  class="absolute w-[9px] top-1 left-1.5  font-normal text-[#ececec] text-[13px] text-center tracking-[0.13px] leading-[normal] !tracking-[0.12px] !text-[12.2px] !w-2"
+                  style="font-family:'Font Awesome 5 Pro-Regular',Helvetica;">
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative w-fit mt-[-1.00px] [font-family:'Chakra Petch',Helvetica] font-medium text-white text-base tracking-[0] leading-[normal] !mt-[-0.94px] !text-[15.1px]">
+              DETAILS SERVICE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+{% endblock content %}
