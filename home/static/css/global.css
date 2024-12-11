@@ -26,3 +26,23 @@ a {
   src: url("https://anima-uploads.s3.amazonaws.com/5b59ac6041bb8600090b709d/Font Awesome 5 Pro-Regular-400.otf")
     format("opentype");
 }
+
+.font-chackra-petch {
+  font-family: "Chakra Petch";
+}
+
+.font-mullins {
+  font-family: "Mulish";
+}
+
+.font-weight-300 {
+  font-weight:300;
+}
+
+.font-weight-500 {
+  font-weight:500;
+}
+
+.font-weight-700 {
+  font-weight:700;
+}
