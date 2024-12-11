@@ -27,6 +27,10 @@ a {
     format("opentype");
 }
 
+.font-orbitron {
+  font-family: "Orbitron";
+}
+
 .font-chackra-petch {
   font-family: "Chakra Petch";
 }
