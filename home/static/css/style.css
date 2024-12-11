@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* home */
 .hero {
   width: 1440px;
@@ -507,4 +506,12 @@
   letter-spacing: -0.48px;
   line-height: 24px;
   white-space: nowrap;
+}
+
+
+.howtoservice-grid .bullet {
+  font-family: 'Chakra Petch', Helvetica
+}
+.howtoservice-grid .descripton {
+  font-family:'Mulish',Helvetica
 }
