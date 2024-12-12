@@ -1,5 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500,700|Orbitron:500,700|Chakra+Petch:500,700|Mulish:400");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500,700|Orbitron:500,700|Chakra+Petch:500,700|Poppins:700|Mulish:400");
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -36,6 +36,10 @@ a {
 
 .font-chackra-petch {
   font-family: "Chakra Petch";
+}
+
+.font-poppins {
+  font-family: "Poppins";
 }
 
 .font-mullins {
