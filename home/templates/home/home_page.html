@@ -20,6 +20,8 @@ Delete the line below if you're just getting started and want to remove the welc
   {% comment %}
   hero
   {% endcomment %}
+
+  {% comment %}
   <div class="hero mx-auto">
     <div class="overlap">
       <div class="overlap-group">
@@ -74,34 +76,178 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {# Products #}
-  <div class="product mx-auto mt-[60px]">
-    <div class="heading">
-      <div class="indicator">
-        <div class="rectangle"></div>
-        <div class="our-services">OUR SERVICES</div>
-      </div>
-      <div class="text-wrapper">CARS SERVICES</div>
-    </div>
-    <div class="div">
-      <div class="div-wrapper top-[80px] left-[0px]"><img class="electric-cars"
-          src="{% static 'img/products/polish.png' %}" />
-        <div class="text-wrapper-2">Electric Cars</div>
-      </div>
-      <div class="div-wrapper top-[0px] left-[440px]"><img class="electric-cars"
-          src="{% static 'img/products/spray.png' %}" />
-        <div class="text-wrapper-2">SUV Cars</div>
-        <div class="button"><img class="add" src="{% static 'img/products/add.svg' %}" /></div>
-      </div>
-      <div class="div-wrapper top-[80px] left-[880px]"><img class="electric-cars"
-          src="{% static 'img/products/detail.png' %}" />
-        <div class="text-wrapper-2">Super Cars</div>
+  {% endcomment %}
+
+
+  <div class="w-[1440px] h-[850px] bg-[url('{% static 'img/home/main-car.png' %}')] bg-[100%_100%]" style="background-image: url('{% static 'img/home/main-car.png' %}')">
+    <div class="relative h-[850px] [background:linear-gradient(180deg,rgba(4,3,11,0.74)_0%,rgb(4,3,11)_100%)]">
+      <div class="flex w-[1280px] items-center gap-[419px] relative top-10 lef-0 right-0 mx-auto">
+        <div class="flex flex-col w-16 items-start gap-2.5 relative">
+          <div class="w-6 relative h-0.5 bg-white"></div>
+
+          <div class="w-12 relative h-0.5 bg-white"></div>
+
+          <div class="flex flex-col items-end justify-center relative self-stretch w-full flex-[0_0_auto]">
+            <div class="w-6 relative h-0.5 bg-white"></div>
+          </div>
+        </div>
+
+        <img class="relative w-[265.35px] h-[39.32px]" alt="XDG Supercars Garage"
+          src="{% static 'img/home/xdg-logo.svg' %}" />
+
+        <div class="inline-flex items-center gap-8 relative flex-[0_0_auto] mr-[-0.35px]">
+          <img class="relative w-6 h-6" alt="User" src="{% static 'img/home/user.svg' %}" />
+
+          <div class="relative self-stretch w-px bg-[#ffffff3d]"></div>
+
+          <img class="relative w-6 h-6" alt="Customer service" src="{% static 'img/home/customer-service.svg' %}" />
+        </div>
       </div>
 
+      <div class="flex flex-col w-[1280px] items-center relative lef-0 right-0 mx-auto top-[372px]">
+        <div class="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
+          <div
+            class="flex w-[120px] h-[120px] items-center justify-center relative rounded-[1000px] overflow-hidden border border-solid border-[#ffffff66]">
+            <svg class="!relative !w-6 !h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="#ffffff" />
+            </svg>
+          </div>
+
+          <div
+            class="flex w-[120px] h-[120px] items-center justify-center relative rounded-[1000px] overflow-hidden border border-solid border-[#ffffff66]">
+            <svg class="!relative !w-6 !h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.70504 6L8.29504 7.41L12.875 12L8.29504 16.59L9.70504 18L15.705 12L9.70504 6Z"
+                fill="#ffffff" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="inline-flex flex-col items-center gap-10 relative flex-[0_0_auto] mt-[-196px]">
+          <div class="inline-flex flex-col items-center gap-10 relative flex-[0_0_auto]">
+            <div
+              class="relative w-fit mt-[-1.00px] [font-family:'Orbitron',Helvetica] font-bold text-white text-[66px] text-center tracking-[-3.30px] leading-[66px]">
+              AUTO MAINTENANCE
+              <br />
+              &amp; REPAIR SERVICE
+            </div>
+
+            <div class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
+              <div
+                class="relative w-fit [font-family:'IBM_Plex_Sans',Helvetica] font-bold text-white text-sm text-center tracking-[2.80px] leading-[19.6px] whitespace-nowrap">
+                TAKE A TOUR
+              </div>
+
+              <div
+                class="inline-flex items-center justify-center p-4 relative flex-[0_0_auto] mt-[-5.00px] mb-[-5.00px] mr-[-5.00px] bg-[#c2ae8b] rounded-[1000px] overflow-hidden border-[5px] border-solid border-[#22222280]">
+                <svg class="!relative !w-6 !h-6" fill="none" height="24" viewBox="0 0 25 24" width="25"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.5 13H13.5V19H11.5V13H5.5V11H11.5V5H13.5V11H19.5V13Z" fill="#ffffff" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inline-flex items-center gap-[92px] px-[7px] py-0 absolute top-[790px] left-[263px]">
+
+        <div class="relative w-[48.84px] h-[48.84px]">
+          <img class="absolute w-11 h-11 top-0.5 left-0.5 object-cover" alt="BMW"
+            src="{% static 'img/home/mercedes-benz.png' %}" />
+        </div>
+
+        <div class="relative w-[48.84px] h-[48.84px] overflow-hidden opacity-70">
+          <img class="absolute w-[49px] h-[47px] top-0.5 left-0" alt="Ford" src="{% static 'img/home/ford.png' %}" />
+        </div>
+
+        <div class="relative w-14 h-[49px]">
+          <img class="absolute w-14 h-[31px] top-[9px] left-0 object-cover" alt="Audi"
+            src="{% static 'img/home/audi.png' %}" />
+        </div>
+
+
+        <div class="relative w-[48.84px] h-[48.83px]">
+          <img class="absolute w-14 h-[31px] top-[9px] left-0 object-cover" alt="Rolls Royce"
+            src="{% static 'img/home/rolls-royce.png' %}" />
+        </div>
+
+
+        <div class="relative w-[48.84px] h-[48.84px]">
+          <img class="absolute w-[49px] h-[46px] top-0.5 left-0" alt="Mazda" src="{% static 'img/home/mazda.png' %}" />
+        </div>
+
+        <div class="relative w-[48.84px] h-[48.84px]">
+          <img class="absolute w-[49px] h-10 top-[5px] left-0 object-cover" alt="Nissan"
+            src="{% static 'img/home/nissan.png' %}" />
+        </div>
+      </div>
     </div>
   </div>
 
-  {# Services #}
+  {% comment %}
+  Products
+  {% endcomment %}
+  <div
+    class="text-center mx-auto mt-[40px] md:mt-[80px] flex flex-col w-full md:w-[1280px] items-center gap-24 relative">
+    <div class="inline-flex flex-col items-center gap-6 relative flex-[0_0_auto]">
+      <div class="inline-flex items-center gap-4 relative flex-[0_0_auto]">
+        <div class="relative w-[10px] h-[10px] ml-[-3.34px] bg-[#c2ae8b] -rotate-45"></div>
+
+        <div
+          class="relative w-fit mt-[-1.00px] font-ibm-plesk-sans font-bold text-[#919098] text-sm text-center tracking-[2.80px] leading-[19.6px] whitespace-nowrap">
+          OUR SERVICES
+        </div>
+      </div>
+
+      <div
+        class="relative w-fit font-orbitron font-bold text-white text-5xl text-center tracking-[0] leading-[48px] whitespace-nowrap">
+        CARS SERVICES
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 items-center gap-10 relative flex-[0_0_auto]">
+      <div
+        class="relative w-[400px] h-[500px] bg-[url('{% static 'img/products/electric-cars.png' %}')] bg-cover bg-[100%_100%]"
+        style="background-image:url('{% static 'img/products/electric-cars.png' %}')">
+        <div
+          class="absolute top-[435px] left-[134px] [font-family:'IBM_Plex_Sans',Helvetica] font-medium text-white text-2xl text-center tracking-[-0.48px] leading-6 whitespace-nowrap">
+          Electric Cars
+        </div>
+      </div>
+
+      <div
+        class="mt-[-6rem] relative w-[400px] h-[500px] bg-[url('{% static 'img/products/suv-cars.png' %}')] bg-cover bg-[100%_100%]"
+        style="background-image:url('{% static 'img/products/suv-cars.png' %}')">
+        <div
+          class="inline-flex items-center justify-center p-8 absolute top-[201px] left-[151px] bg-[#c2ae8b] rounded-[1000px] overflow-hidden border-[5px] border-solid border-[#22222280]">
+          <svg class="!w-6 !h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white" />
+          </svg>
+        </div>
+
+        <div
+          class="absolute top-[435px] left-[151px] [font-family:'IBM_Plex_Sans',Helvetica] font-medium text-white text-2xl text-center tracking-[-0.48px] leading-6 whitespace-nowrap">
+          SUV Cars
+        </div>
+      </div>
+
+      <div
+        class="relative w-[400px] h-[500px] bg-[url('{% static 'img/products/super-cars.png' %}')] bg-cover bg-[100%_100%]"
+        style="background-image:url('{% static 'img/products/super-cars.png' %}')">
+        <div
+          class="absolute top-[435px] left-[142px] [font-family:'IBM_Plex_Sans',Helvetica] font-medium text-white text-2xl text-center tracking-[-0.48px] leading-6 whitespace-nowrap">
+          Super Cars
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %}
+  Services
+  {% endcomment %}
   <div
     class="ServicesAuto p-[25px] md:p-0 text-left mx-auto mt-[40px] md:mt-[80px] grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:w-[1280px] justify-start items-start gap-[38px]">
     <div class="Service1 w-[250px] md:w-[400.94px] relative">
@@ -319,7 +465,9 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {# How to service my car #}
+  {% comment %}
+  How to service my car
+  {% endcomment %}
   <div class="flex max-md:flex-col md:flex-wrap md:w-[1360px] items-start gap-[0px_0px] relative mt-[90px]">
     <div
       class="flex flex-col w-[425px] h-[659px] items-start gap-2.5 pl-[78px] pr-[61px] py-[95px] relative bg-[#c2ae8b]">
@@ -470,7 +618,9 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {# Affordable pricing plans #}
+  {% comment %}
+  Affordable pricing plans
+  {% endcomment %}
   <div class="inline-flex flex-col items-start gap-2.5 relative mx-auto text-left mt-[80px]">
     <div class="inline-flex flex-wrap items-start gap-[60px_60px] relative flex-[0_0_auto]">
       <div class="relative w-[355px] h-[521px]">
@@ -751,9 +901,9 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-
-  {# Photos #}
-
+  {% comment %}
+  Photos
+  {% endcomment %}
   <div class="mt-[40px] md:mt-[80px] w-[1280px] h-[1040px]">
     <div class="inline-flex flex-col items-center gap-24 relative">
       <div class="inline-flex flex-col items-center gap-6 relative flex-[0_0_auto]">
@@ -811,7 +961,9 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {# Community #}
+  {% comment %}
+  Community
+  {% endcomment %}
   <div
     class="mt-[40px] md:mt-[80px] flex flex-col w-auto md:w-[1440px] h-[850px] items-center gap-[63px] px-[460px] py-[270px] relative bg-white [background:linear-gradient(180deg,rgba(4,3,11,0.2)_0%,rgb(4,3,11)_100%)] bg-cover bg-[50%_50%]"
     style="background-image: url('{% static 'img/community/community-auto.png' %}')">
@@ -852,7 +1004,9 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {# Form #}
+  {% comment %}
+  Form
+  {% endcomment %}
   <div
     class="mx-auto mt-[40px] md:mt-[80px] text-left flex flex-wrap w-[1276.25px] min-h-[660.19px] items-center gap-[47px_38px] relative overflow-hidden">
     <div
@@ -867,7 +1021,8 @@ Delete the line below if you're just getting started and want to remove the welc
       sint occaecat cupidatat non proident
     </p>
 
-    <form method="post" action="." class="text-left grid grid-cols-1 gap-4 md:grid-cols-2 w-[1276.25px] items-center gap-[47px_38px] relative overflow-hidden">
+    <form method="post" action="."
+      class="text-left grid grid-cols-1 gap-4 md:grid-cols-2 w-[1276.25px] items-center gap-[47px_38px] relative overflow-hidden">
       {% csrf_token %}
 
       <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
@@ -876,7 +1031,8 @@ Delete the line below if you're just getting started and want to remove the welc
           NAME</label>
         <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
           alt="Enter Your Name" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.name|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
+        {{ form.name|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0]
+        leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
         {% if form.name.errors %}
         <ul class="error-list">
           {% for error in form.name.errors %}
@@ -892,7 +1048,8 @@ Delete the line below if you're just getting started and want to remove the welc
           EMAIL</label>
         <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
           alt="Enter Your Email" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.email|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
+        {{ form.email|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0]
+        leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
         {% if form.email.errors %}
         <ul class="error-list">
           {% for error in form.email.errors %}
@@ -908,7 +1065,8 @@ Delete the line below if you're just getting started and want to remove the welc
           PHONE</label>
         <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
           alt="Enter Your Phone" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.phone|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
+        {{ form.phone|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0]
+        leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
         {% if form.phone.errors %}
         <ul class="error-list">
           {% for error in form.phone.errors %}
@@ -920,10 +1078,12 @@ Delete the line below if you're just getting started and want to remove the welc
 
       <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
         <label for="{{ form.name.id_for_label }}"
-          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">SELECT DATE</label>
+          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">SELECT
+          DATE</label>
         <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
           alt="Select Date" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.date|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] w-[100%] d-block bg-transparent outline-none" }}
+        {{ form.date|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0]
+        leading-[normal] !text-[13.1px] !top-[33px] w-[100%] d-block bg-transparent outline-none" }}
         {% if form.date.errors %}
         <ul class="error-list">
           {% for error in form.date.errors %}
@@ -936,10 +1096,12 @@ Delete the line below if you're just getting started and want to remove the welc
 
       <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
         <label for="{{ form.name.id_for_label }}"
-          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">SELECT TIME</label>
+          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">SELECT
+          TIME</label>
         <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
           alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.time|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] w-[100%] d-block bg-transparent outline-none" }}
+        {{ form.time|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0]
+        leading-[normal] !text-[13.1px] !top-[33px] w-[100%] d-block bg-transparent outline-none" }}
         {% if form.time.errors %}
         <ul class="error-list">
           {% for error in form.time.errors %}
@@ -951,10 +1113,12 @@ Delete the line below if you're just getting started and want to remove the welc
 
       <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
         <label for="{{ form.name.id_for_label }}"
-          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">YOUR MESSAGE</label>
+          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">YOUR
+          MESSAGE</label>
         <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
           alt="Describe Your Message" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.message|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
+        {{ form.message|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0]
+        leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
         {% if form.message.errors %}
         <ul class="error-list">
           {% for error in form.message.errors %}
@@ -965,14 +1129,190 @@ Delete the line below if you're just getting started and want to remove the welc
       </div>
 
       <div class="w-[210.99px] h-[79.71px] items-center justify-center relative cursor-pointer">
-        <img class="relative" alt="Submit" src="{% static 'img/form/bg.svg' %}"
-        />  
-        <div class="relative ml-[-35px] mt-[-35px] font-poppins font-bold text-white text-[16.9px] text-center tracking-[0] leading-[normal]">
+        <img class="relative" alt="Submit" src="{% static 'img/form/bg.svg' %}" />
+        <div
+          class="relative ml-[-35px] mt-[-35px] font-poppins font-bold text-white text-[16.9px] text-center tracking-[0] leading-[normal]">
           SEND
         </div>
       </div>
     </form>
   </div>
+
+  {% comment %}
+  Footer
+  {% endcomment %}
+  <div class="text-left mx-auto mt-[40px] md:mt-[80px] w-[1440px] h-[1049px] overflow-hidden">
+    <div class="relative h-[1165px]">
+      <div class="inline-flex flex-col items-start gap-8 absolute top-[524px] left-20">
+        <div class="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
+          <div
+            class="relative w-fit mt-[-1.00px] [font-family:'IBM_Plex_Sans',Helvetica] font-bold text-[#84848b] text-xs tracking-[2.40px] leading-[16.8px] whitespace-nowrap">
+            EMAIL ADDRESS
+          </div>
+
+          <div
+            class="relative w-fit [font-family:'Poppins',Helvetica] font-medium text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+            Services
+          </div>
+        </div>
+
+        <div class="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
+          <div
+            class="relative w-fit mt-[-1.00px] [font-family:'IBM_Plex_Sans',Helvetica] font-bold text-[#84848b] text-xs tracking-[2.40px] leading-[16.8px] whitespace-nowrap">
+            PHONE
+          </div>
+
+          <div
+            class="relative w-fit [font-family:'Poppins',Helvetica] font-medium text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+            Services
+          </div>
+        </div>
+
+        <div class="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
+          <div
+            class="relative w-fit mt-[-1.00px] [font-family:'IBM_Plex_Sans',Helvetica] font-bold text-[#84848b] text-xs tracking-[2.40px] leading-[16.8px] whitespace-nowrap">
+            OFFICE
+          </div>
+
+          <p
+            class="relative w-fit [font-family:'Poppins',Helvetica] font-medium text-white text-base tracking-[0] leading-[22.4px]">
+            DIP2 - Dubai Investment Park - 2 - Dubai
+            <br />
+            United Arab of Emirates
+          </p>
+        </div>
+      </div>
+
+      <img class="absolute w-[163px] h-6 top-[158px] left-[78px]" alt="XDG Supercar Garage Patterns"
+        src="{% static 'img/footer/vector.svg' %}" />
+
+      <div class="flex flex-col w-[522px] h-[1007px] items-start gap-[120px] absolute top-[158px] left-[710px]">
+        <div class="flex flex-col items-start gap-[120px] relative self-stretch w-full flex-[0_0_auto]">
+          <div class="flex flex-col items-start gap-[120px] relative self-stretch w-full flex-[0_0_auto]">
+            <div class="flex flex-col items-start gap-[120px] relative self-stretch w-full flex-[0_0_auto]">
+              <div class="flex justify-around gap-[129px] self-stretch w-full items-start relative flex-[0_0_auto]">
+                <div class="flex w-[522px] items-center justify-between relative">
+                  <div class="inline-flex flex-col gap-8 items-start relative flex-[0_0_auto]">
+                    <div
+                      class="relative w-fit mt-[-1.00px] [font-family:'Orbitron',Helvetica] font-bold text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                      Home
+                    </div>
+
+                    <div class="inline-flex flex-col items-start gap-5 relative flex-[0_0_auto]">
+                      <div
+                        class="relative self-stretch mt-[-1.00px] [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Solutions
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        E-Cars
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Garage
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Support
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        About us
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col w-[180px] items-start gap-8 relative">
+                    <div
+                      class="relative w-fit mt-[-1.00px] [font-family:'Orbitron',Helvetica] font-bold text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                      Services
+                    </div>
+
+                    <div class="inline-flex flex-col items-start gap-5 relative flex-[0_0_auto]">
+                      <div
+                        class="relative self-stretch mt-[-1.00px] [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Engine
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Steering
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Brake
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Battery
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Cooling Sym
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-around gap-[129px] self-stretch w-full items-start relative flex-[0_0_auto]">
+                <div class="flex w-[522px] items-start justify-between relative">
+                  <div class="inline-flex flex-col gap-8 items-start relative flex-[0_0_auto]">
+                    <div
+                      class="relative w-fit mt-[-1.00px] [font-family:'Orbitron',Helvetica] font-bold text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                      Resource
+                    </div>
+
+                    <div class="inline-flex flex-col items-start gap-5 relative flex-[0_0_auto]">
+                      <div
+                        class="relative self-stretch mt-[-1.00px] [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Newsletter
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Cookies
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Terms Conditions
+                      </div>
+
+                      <div
+                        class="relative self-stretch [font-family:'IBM_Plex_Sans',Helvetica] font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                        Spesification
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="inline-flex flex-col gap-8 items-start relative flex-[0_0_auto]">
+                    <div
+                      class="relative w-fit mt-[-1.00px] [font-family:'Orbitron',Helvetica] font-bold text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                      Follow Us
+                    </div>
+
+                    <img class="relative flex-[0_0_auto]" alt="Social media" src="{% static 'img/footer/list.svg' %}" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img class="absolute w-[1440px] h-[1049px] top-0 left-0" alt="Pattern"
+        src="{% static 'img/footer/pattern.svg' %}" />
+    </div>
+  </div>
+
   {# /end wrapper #}
 </div>
 
