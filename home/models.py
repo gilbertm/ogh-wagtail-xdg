@@ -36,8 +36,7 @@ class CustomForm(forms.Form):
     name = forms.CharField(
         max_length=100,
         widget = forms.TextInput(attrs={
-            "placeholder": "Enter Your Name",
-            "class": "absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block"
+            "placeholder": "Enter Your Name"
             })
         )
     
@@ -52,8 +51,7 @@ class CustomForm(forms.Form):
         validators = [RegexValidator(r'^\+?1?\d{9,15}$', 'Enter Your Phone')],
         widget = forms.TextInput(attrs={
             "placeholder": "Enter Your Phone",
-            "tyipe": "tel",
-            "class": "form-control"
+            "tyipe": "tel"
             })
     )
 

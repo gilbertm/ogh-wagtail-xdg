@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_filters %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -73,9 +74,7 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {#
-  Products
-  #}
+  {# Products #}
   <div class="product mx-auto mt-[60px]">
     <div class="heading">
       <div class="indicator">
@@ -102,9 +101,7 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {#
-  Services
-  #}
+  {# Services #}
   <div
     class="ServicesAuto p-[25px] md:p-0 text-left mx-auto mt-[40px] md:mt-[80px] grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:w-[1280px] justify-start items-start gap-[38px]">
     <div class="Service1 w-[250px] md:w-[400.94px] relative">
@@ -322,9 +319,7 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {#
-  How to service my car
-  #}
+  {# How to service my car #}
   <div class="flex max-md:flex-col md:flex-wrap md:w-[1360px] items-start gap-[0px_0px] relative mt-[90px]">
     <div
       class="flex flex-col w-[425px] h-[659px] items-start gap-2.5 pl-[78px] pr-[61px] py-[95px] relative bg-[#c2ae8b]">
@@ -475,9 +470,7 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {#
-  Affordable pricing plans
-  #}
+  {# Affordable pricing plans #}
   <div class="inline-flex flex-col items-start gap-2.5 relative mx-auto text-left mt-[80px]">
     <div class="inline-flex flex-wrap items-start gap-[60px_60px] relative flex-[0_0_auto]">
       <div class="relative w-[355px] h-[521px]">
@@ -759,9 +752,7 @@ Delete the line below if you're just getting started and want to remove the welc
   </div>
 
 
-  {#
-  Photos
-  #}
+  {# Photos #}
 
   <div class="mt-[40px] md:mt-[80px] w-[1280px] h-[1040px]">
     <div class="inline-flex flex-col items-center gap-24 relative">
@@ -820,9 +811,7 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {#
-  Community
-  #}
+  {# Community #}
   <div
     class="mt-[40px] md:mt-[80px] flex flex-col w-auto md:w-[1440px] h-[850px] items-center gap-[63px] px-[460px] py-[270px] relative bg-white [background:linear-gradient(180deg,rgba(4,3,11,0.2)_0%,rgb(4,3,11)_100%)] bg-cover bg-[50%_50%]"
     style="background-image: url('{% static 'img/community/community-auto.png' %}')">
@@ -863,11 +852,9 @@ Delete the line below if you're just getting started and want to remove the welc
     </div>
   </div>
 
-  {#
-  Form
-  #}
+  {# Form #}
   <div
-    class="text-left flex flex-wrap w-[1276.25px] h-[660.19px] items-center gap-[47px_38px] relative overflow-hidden">
+    class="mx-auto mt-[40px] md:mt-[80px] text-left flex flex-wrap w-[1276.25px] min-h-[660.19px] items-center gap-[47px_38px] relative overflow-hidden">
     <div
       class="relative w-[714.55px] font-orbitron font-bold text-[#ececec] text-[39.4px] tracking-[0] leading-[normal]">
       REQUEST AN APPOINTMENT ONLINE
@@ -880,7 +867,7 @@ Delete the line below if you're just getting started and want to remove the welc
       sint occaecat cupidatat non proident
     </p>
 
-    <form method="post" action=".">
+    <form method="post" action="." class="text-left grid grid-cols-1 gap-4 md:grid-cols-2 w-[1276.25px] items-center gap-[47px_38px] relative overflow-hidden">
       {% csrf_token %}
 
       <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
@@ -889,7 +876,7 @@ Delete the line below if you're just getting started and want to remove the welc
           NAME</label>
         <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
           alt="Enter Your Name" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.name }}
+        {{ form.name|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
         {% if form.name.errors %}
         <ul class="error-list">
           {% for error in form.name.errors %}
@@ -899,21 +886,13 @@ Delete the line below if you're just getting started and want to remove the welc
         {% endif %}
       </div>
 
-      <div class="form-group">
-
-        {{ form.name }}
-        {% if form.name.errors %}
-        <ul class="error-list">
-          {% for error in form.name.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </div>
-
-      <div class="form-group">
-        <label for="{{ form.email.id_for_label }}">Email</label>
-        {{ form.email }}
+      <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
+        <label for="{{ form.name.id_for_label }}"
+          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">YOUR
+          EMAIL</label>
+        <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
+          alt="Enter Your Email" src="{% static 'img/form/input-name.svg' %}" />
+        {{ form.email|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
         {% if form.email.errors %}
         <ul class="error-list">
           {% for error in form.email.errors %}
@@ -923,9 +902,13 @@ Delete the line below if you're just getting started and want to remove the welc
         {% endif %}
       </div>
 
-      <div class="form-group">
-        <label for="{{ form.phone.id_for_label }}">Phone</label>
-        {{ form.phone }}
+      <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
+        <label for="{{ form.name.id_for_label }}"
+          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">YOUR
+          PHONE</label>
+        <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
+          alt="Enter Your Phone" src="{% static 'img/form/input-name.svg' %}" />
+        {{ form.phone|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
         {% if form.phone.errors %}
         <ul class="error-list">
           {% for error in form.phone.errors %}
@@ -935,9 +918,12 @@ Delete the line below if you're just getting started and want to remove the welc
         {% endif %}
       </div>
 
-      <div class="form-group">
-        <label for="{{ form.date.id_for_label }}">Date</label>
-        {{ form.date }}
+      <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
+        <label for="{{ form.name.id_for_label }}"
+          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">SELECT DATE</label>
+        <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
+          alt="Select Date" src="{% static 'img/form/input-name.svg' %}" />
+        {{ form.date|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] w-[100%] d-block bg-transparent outline-none" }}
         {% if form.date.errors %}
         <ul class="error-list">
           {% for error in form.date.errors %}
@@ -945,11 +931,15 @@ Delete the line below if you're just getting started and want to remove the welc
           {% endfor %}
         </ul>
         {% endif %}
+
       </div>
 
-      <div class="form-group">
-        <label for="{{ form.time.id_for_label }}">Time</label>
-        {{ form.time }}
+      <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
+        <label for="{{ form.name.id_for_label }}"
+          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">SELECT TIME</label>
+        <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
+          alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
+        {{ form.time|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] w-[100%] d-block bg-transparent outline-none" }}
         {% if form.time.errors %}
         <ul class="error-list">
           {% for error in form.time.errors %}
@@ -959,9 +949,12 @@ Delete the line below if you're just getting started and want to remove the welc
         {% endif %}
       </div>
 
-      <div class="form-group">
-        <label for="{{ form.message.id_for_label }}">Message</label>
-        {{ form.message }}
+      <div class="relative w-[660px] h-[67px] bg-[#161616] !h-[61.89px] !bg-[unset] !w-[618.9px]">
+        <label for="{{ form.name.id_for_label }}"
+          class="absolute top-0 left-0 font-bold text-[#ececec] text-base tracking-[0] leading-[normal] !text-[15px] !font-poppins">YOUR MESSAGE</label>
+        <img class="absolute w-[660px] h-0.5 top-16 left-0 !w-[619px] !top-[60px] object-cover bg-[#222222]"
+          alt="Describe Your Message" src="{% static 'img/form/input-name.svg' %}" />
+        {{ form.message|add_class:"absolute top-9 left-0 font-mulish font-normal text-[#c1c1c1] text-sm tracking-[0] leading-[normal] !text-[13.1px] !top-[33px] bg-transparent w-[100%] d-block outline-none" }}
         {% if form.message.errors %}
         <ul class="error-list">
           {% for error in form.message.errors %}
@@ -971,36 +964,14 @@ Delete the line below if you're just getting started and want to remove the welc
         {% endif %}
       </div>
 
-      <button type="submit" class="submit-button">Submit</button>
-    </form>
-
-
-
-    {#
-    <Input className="" divClassName="" inputName="/img/input-name-1.svg" inputNameClassName="" yourNameClassName="" />
-    <Input className="!h-[61.89px] !bg-[unset] !w-[618.9px]" divClassName="!text-[13.1px] !top-[33px]"
-      inputName="/img/input-name-2.svg" inputNameClassName="!w-[619px] !top-[60px]" text="YOUR PHONE"
-      text1="Enter Your Phone" yourNameClassName="!text-[15px] ![font-family:'Poppins',Helvetica]" />
-    <Input className="!h-[61.89px] !bg-[unset] !w-[618.9px]" divClassName="!text-[13.1px] !top-[33px]"
-      inputName="/img/input-name-3.svg" inputNameClassName="!w-[619px] !top-[60px]" text="SELECT DATE"
-      text1="Select&nbsp;&nbsp;Date" yourNameClassName="!text-[15px] ![font-family:'Poppins',Helvetica]" />
-    <Input className="!h-[61.89px] !bg-[unset] !w-[618.9px]" divClassName="!text-[13.1px] !top-[33px]"
-      inputName="/img/input-name-4.svg" inputNameClassName="!w-[619px] !top-[60px]" text="SELECT TIME"
-      text1="Select&nbsp;&nbsp;Time" yourNameClassName="!text-[15px] ![font-family:'Poppins',Helvetica]" />
-    <Input className="!h-[73.14px] !bg-[unset] !w-[1276.25px]" divClassName="!text-[13.1px] !top-11"
-      inputName="/img/input-name-5.svg" inputNameClassName="!w-[619px] !top-[71px]" text="YOUR MESSAGE"
-      text1="Describe Your Problem" yourNameClassName="!text-[15px] ![font-family:'Poppins',Helvetica]" />
-    <div className="relative w-[182.86px] h-[56.26px]">
-      <div className="inline-flex flex-col items-center justify-center relative">
-        <img className="relative w-[210.99px] h-[79.71px] mt-[-23.44px] mr-[-28.13px]" alt="Bg" src="/img/bg.svg" />
-
-        <div
-          className="relative w-[105.96px] h-[56.26px] mt-[-188.48px] [font-family:'Poppins',Helvetica] font-bold text-white text-[16.9px] text-center tracking-[0] leading-[normal]">
+      <div class="w-[210.99px] h-[79.71px] items-center justify-center relative cursor-pointer">
+        <img class="relative" alt="Submit" src="{% static 'img/form/bg.svg' %}"
+        />  
+        <div class="relative ml-[-35px] mt-[-35px] font-poppins font-bold text-white text-[16.9px] text-center tracking-[0] leading-[normal]">
           SEND
         </div>
       </div>
-    </div>
-    #}
+    </form>
   </div>
   {# /end wrapper #}
 </div>
