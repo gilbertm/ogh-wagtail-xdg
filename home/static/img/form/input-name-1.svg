@@ -1,0 +1,6 @@
+<svg width="619" height="3" viewBox="0 0 619 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_2072_128" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.58963H618.901H0Z"/>
+</mask>
+<path d="M0 2.52736H618.901V0.651902H0V2.52736Z" fill="#343434" mask="url(#path-1-inside-1_2072_128)"/>
+</svg>
