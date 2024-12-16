@@ -1115,6 +1115,10 @@ video {
   height: 1rem;
 }
 
+.h-\[16px\] {
+  height: 16px;
+}
+
 .min-h-\[660\.19px\] {
   min-height: 660.19px;
 }
@@ -2481,6 +2485,16 @@ video {
 
   .max-md\:flex-col {
     flex-direction: column;
+  }
+}
+
+@media not all and (min-width: 640px) {
+  .max-sm\:h-\[10px\] {
+    height: 10px;
+  }
+
+  .max-sm\:w-\[15px\] {
+    width: 15px;
   }
 }
 
