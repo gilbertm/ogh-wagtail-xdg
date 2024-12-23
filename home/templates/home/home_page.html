@@ -10,13 +10,12 @@
 
 {% block content %}
 
-
-<div class="main-wrapper w-auto md:w-[1440px] mx-auto">
+<div class="main-wrapper">
   {% comment %}
   hero
   {% endcomment %}
-  <div
-    class="w-full md:w-[1440px] h-[450px] md:h-[850px] bg-[url('{% static 'img/home/main-car.png' %}')] bg-[50%_50%] md:bg-[100%_100%]"
+  <section
+    class="w-screen h-[450px] md:h-[850px] bg-[url('{% static 'img/home/main-car.png' %}')] bg-cover bg-[50%_50%] md:bg-[100%_100%]"
     style="background-image: url('{% static 'img/home/main-car.png' %}')">
     <div
       class="relative h-[450px] md:h-[850px] [background:linear-gradient(180deg,rgba(4,3,11,0.74)_0%,rgb(4,3,11)_100%)]">
@@ -46,7 +45,7 @@
       </div>
 
       <div
-        class="px-3 flex flex-col w-full md:w-[1280px] items-center relative lef-0 right-0 mx-auto top-[150px] md:top-[372px]">
+        class="px-3 flex flex-col w-full sm:w-[80%] md:w-[1280px] items-center relative lef-0 right-0 mx-auto top-[150px] md:top-[372px]">
         <div class="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
           <div
             class="flex w-[40px] md:w-[120px] h-[40px] md:h-[120px] items-center justify-center relative rounded-[1000px] overflow-hidden border border-solid border-[#ffffff66]">
@@ -91,7 +90,7 @@
       </div>
 
       <div
-        class="mx-auto inline-flex items-center items-center justify-between md:gap-[92px] px-[7px] py-0 absolute top-[350px] md:top-[790px] left-0 md:left-[263px] w-[75%] max-md:right-0 md:w-auto">
+        class="car-brands mx-auto inline-flex items-center items-center justify-between md:gap-[92px] px-[7px] py-0 absolute top-[350px] md:top-[790px] left-0 right-0 w-[90%] md:w-[75%] lg:w-[50%]">
 
         <div class="relative w-[48.84px] h-[48.84px]">
           <img class="absolute w-8 md:w-11 md:h-11 top-0.5 left-0.5 object-cover" alt="BMW"
@@ -126,13 +125,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   {% comment %}
   Products
   {% endcomment %}
-  <div
-    class="text-center mx-[10px] md:mx-auto mt-[40px] md:mt-[80px] flex flex-col w-full md:w-[1280px] items-center gap-12 md:gap-24 relative">
+  <section
+    class="mt-[40px] md:mt-[80px] max-w-[1280px] mx-auto w-full flex flex-col items-center gap-12 md:gap-24 relative flex-[0_0_auto]">
     <div class="inline-flex flex-col items-center gap-6 relative flex-[0_0_auto]">
       <div class="inline-flex items-center gap-4 relative flex-[0_0_auto]">
         <div class="relative w-[10px] h-[10px] ml-[-3.34px] bg-[#c2ae8b] -rotate-45"></div>
@@ -149,56 +148,57 @@
       </div>
     </div>
 
-    <div class="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 items-center gap-3 md:gap-10 relative flex-[0_0_auto]">
+    <div
+      class="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 items-center gap-3 md:gap-10 relative flex-[0_0_auto]">
       <div
-        class="group transition-transform duration-300 ease-in-out hover:-translate-y-10 cursor-pointer relative w-full h-[250px] md:w-[400px] md:h-[500px] bg-[url('{% static 'img/products/electric-cars.png' %}')] bg-cover bg-[100%_100%]"
+        class="group transition-transform duration-300 ease-in-out hover:-translate-y-6 sm:hover:-translate-y-8 md:hover:-translate-y-10 cursor-pointer relative w-full h-[200px] sm:h-[300px] md:h-[500px] bg-[url('{% static 'img/products/electric-cars.png' %}')] bg-cover bg-center sm:bg-top md:bg-[100%_100%]"
         style="background-image:url('{% static 'img/products/electric-cars.png' %}')">
         <div
-          class="invisible group-hover:visible inline-flex items-center justify-center p-8 absolute top-[201px] left-[151px] bg-[#c2ae8b] rounded-[1000px] overflow-hidden border-[5px] border-solid border-[#22222280]">
-          <svg class="!w-6 !h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
+          class="md:invisible group-hover:visible inline-flex items-center justify-center p-4 sm:p-6 md:p-8 absolute top-[40%] sm:top-[50%] md:top-[201px] left-1/2 -translate-x-1/2 bg-[#c2ae8b] rounded-full overflow-hidden border-[3px] sm:border-[4px] md:border-[5px] border-solid border-[#22222280]">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white" />
           </svg>
         </div>
         <div
-          class="absolute top-[185px] left-0 right-0 md:top-[435px] font-ibm-plex-sans font-medium text-white text-[18px] md:text-2xl text-center tracking-[-0.48px] leading-6 whitespace-nowrap">
+          class="absolute bottom-6 sm:bottom-8 md:bottom-12 left-0 right-0 font-ibm-plex-sans font-medium text-white text-base sm:text-xl md:text-2xl text-center tracking-[-0.48px] leading-normal">
           Electric Cars
         </div>
       </div>
 
       <div
-        class="group transition-transform duration-300 ease-in-out hover:-translate-y-10 cursor-pointer relative w-full h-[250px] md:w-[400px] md:h-[500px] bg-[url('{% static 'img/products/electric-cars.png' %}')] bg-cover bg-[100%_100%]"
+        class="group transition-transform duration-300 ease-in-out hover:-translate-y-6 sm:hover:-translate-y-8 md:hover:-translate-y-10 cursor-pointer relative w-full h-[200px] sm:h-[300px] md:h-[500px] bg-[url('{% static 'img/products/electric-cars.png' %}')] bg-cover bg-center sm:bg-top md:bg-[100%_100%]"
         style="background-image:url('{% static 'img/products/suv-cars.png' %}')">
         <div
-        class="invisible group-hover:visible inline-flex items-center justify-center p-8 absolute top-[201px] left-[151px] bg-[#c2ae8b] rounded-[1000px] overflow-hidden border-[5px] border-solid border-[#22222280]">
-        <svg class="!w-6 !h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white" />
-        </svg>
-      </div>
-      <div
-          class="absolute top-[185px] left-0 right-0 md:top-[435px] font-ibm-plex-sans font-medium text-white text-[18px] md:text-2xl text-center tracking-[-0.48px] leading-6 whitespace-nowrap">
-          SUV Cars
-        </div>
-      </div>
-
-      <div
-        class="group transition-transform duration-300 ease-in-out hover:-translate-y-10 cursor-pointer relative w-full h-[250px] md:w-[400px] md:h-[500px] bg-[url('{% static 'img/products/electric-cars.png' %}')] bg-cover bg-[100%_100%]"
-        style="background-image:url('{% static 'img/products/super-cars.png' %}')">
-        <div
-          class="invisible group-hover:visible inline-flex items-center justify-center p-8 absolute top-[201px] right-0 left-[151px] bg-[#c2ae8b] rounded-[1000px] overflow-hidden border-[5px] border-solid border-[#22222280]">
-          <svg class="!w-6 !h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
+          class="md:invisible group-hover:visible inline-flex items-center justify-center p-4 sm:p-6 md:p-8 absolute top-[40%] sm:top-[50%] md:top-[201px] left-1/2 -translate-x-1/2 bg-[#c2ae8b] rounded-full overflow-hidden border-[3px] sm:border-[4px] md:border-[5px] border-solid border-[#22222280]">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white" />
           </svg>
         </div>
         <div
-          class="absolute top-[185px] left-0 right-0 md:top-[435px] font-ibm-plex-sans font-medium text-white text-[18px] md:text-2xl text-center tracking-[-0.48px] leading-6 whitespace-nowrap">
+          class="absolute bottom-6 sm:bottom-8 md:bottom-12 left-0 right-0 font-ibm-plex-sans font-medium text-white text-base sm:text-xl md:text-2xl text-center tracking-[-0.48px] leading-normal">
+          SUV Cars
+        </div>
+      </div>
+
+      <div
+        class="group transition-transform duration-300 ease-in-out hover:-translate-y-6 sm:hover:-translate-y-8 md:hover:-translate-y-10 cursor-pointer relative w-full h-[200px] sm:h-[300px] md:h-[500px] bg-[url('{% static 'img/products/electric-cars.png' %}')] bg-cover bg-center sm:bg-top md:bg-[100%_100%]"
+        style="background-image:url('{% static 'img/products/super-cars.png' %}')">
+        <div
+          class="md:invisible group-hover:visible inline-flex items-center justify-center p-4 sm:p-6 md:p-8 absolute top-[40%] sm:top-[50%] md:top-[201px] left-1/2 -translate-x-1/2 bg-[#c2ae8b] rounded-full overflow-hidden border-[3px] sm:border-[4px] md:border-[5px] border-solid border-[#22222280]">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" height="24" viewBox="0 0 24 24" width="24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white" />
+          </svg>
+        </div>
+        <div
+          class="absolute bottom-6 sm:bottom-8 md:bottom-12 left-0 right-0 font-ibm-plex-sans font-medium text-white text-base sm:text-xl md:text-2xl text-center tracking-[-0.48px] leading-normal">
           Super Cars
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   {% comment %} wrapper {% endcomment %}
 </div>
