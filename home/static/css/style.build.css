@@ -907,6 +907,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .\!h-3 {
   height: 0.75rem !important;
 }
@@ -2707,6 +2711,14 @@ video {
 
 .group:hover .group-hover\:visible {
   visibility: visible;
+}
+
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+.group:hover .group-hover\:hidden {
+  display: none;
 }
 
 @media not all and (min-width: 768px) {
