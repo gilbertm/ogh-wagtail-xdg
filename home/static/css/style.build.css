@@ -1099,6 +1099,14 @@ video {
   min-height: 660.19px;
 }
 
+.min-h-\[400px\] {
+  min-height: 400px;
+}
+
+.min-h-\[500px\] {
+  min-height: 500px;
+}
+
 .\!w-2 {
   width: 0.5rem !important;
 }
@@ -1354,6 +1362,10 @@ video {
 
 .\!w-4 {
   width: 1rem !important;
+}
+
+.w-\[140px\] {
+  width: 140px;
 }
 
 .max-w-\[1280px\] {
@@ -1640,6 +1652,18 @@ video {
   background-size: cover;
 }
 
+.bg-contain {
+  background-size: contain;
+}
+
+.\!bg-contain {
+  background-size: contain !important;
+}
+
+.\!bg-cover {
+  background-size: cover !important;
+}
+
 .bg-\[100\%_100\%\] {
   background-position: 100% 100%;
 }
@@ -1650,6 +1674,14 @@ video {
 
 .bg-center {
   background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.\!bg-no-repeat {
+  background-repeat: no-repeat !important;
 }
 
 .object-cover {
@@ -1731,6 +1763,11 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .pb-0 {
@@ -2139,6 +2176,12 @@ video {
 
 .transition-transform {
   transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2887,6 +2930,10 @@ video {
     width: 548px;
   }
 
+  .md\:w-\[180px\] {
+    width: 180px;
+  }
+
   .md\:flex-1 {
     flex: 1 1 0%;
   }
@@ -2963,8 +3010,20 @@ video {
     gap: 40px 40px;
   }
 
+  .md\:gap-\[63px\] {
+    gap: 63px;
+  }
+
   .md\:border-\[5px\] {
     border-width: 5px;
+  }
+
+  .md\:bg-cover {
+    background-size: cover;
+  }
+
+  .md\:\!bg-cover {
+    background-size: cover !important;
   }
 
   .md\:bg-\[100\%_100\%\] {
@@ -3000,6 +3059,16 @@ video {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:px-\[460px\] {
+    padding-left: 460px;
+    padding-right: 460px;
+  }
+
+  .md\:py-\[270px\] {
+    padding-top: 270px;
+    padding-bottom: 270px;
   }
 
   .md\:pl-\[88px\] {
