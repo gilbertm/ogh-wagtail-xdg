@@ -1087,6 +1087,14 @@ video {
   height: 250px;
 }
 
+.\!h-4 {
+  height: 1rem !important;
+}
+
+.h-\[300px\] {
+  height: 300px;
+}
+
 .min-h-\[660\.19px\] {
   min-height: 660.19px;
 }
@@ -1342,6 +1350,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.\!w-4 {
+  width: 1rem !important;
 }
 
 .max-w-\[1280px\] {
@@ -1716,6 +1728,11 @@ video {
   padding-bottom: 95px;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -2005,6 +2022,14 @@ video {
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.leading-\[24px\] {
+  line-height: 24px;
+}
+
+.leading-\[36px\] {
+  line-height: 36px;
 }
 
 .\!tracking-\[0\.12px\] {
@@ -2649,6 +2674,10 @@ video {
     visibility: hidden;
   }
 
+  .md\:absolute {
+    position: absolute;
+  }
+
   .md\:bottom-12 {
     bottom: 3rem;
   }
@@ -2667,6 +2696,14 @@ video {
 
   .md\:top-\[9px\] {
     top: 9px;
+  }
+
+  .md\:left-0 {
+    left: 0px;
+  }
+
+  .md\:top-\[452px\] {
+    top: 452px;
   }
 
   .md\:mx-auto {
@@ -2748,6 +2785,14 @@ video {
 
   .md\:h-\[178px\] {
     height: 178px;
+  }
+
+  .md\:h-\[1040px\] {
+    height: 1040px;
+  }
+
+  .md\:h-\[700px\] {
+    height: 700px;
   }
 
   .md\:\!w-6 {
@@ -2838,6 +2883,18 @@ video {
     width: 540px;
   }
 
+  .md\:w-\[548px\] {
+    width: 548px;
+  }
+
+  .md\:flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .md\:grow {
+    flex-grow: 1;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2902,6 +2959,10 @@ video {
     gap: 11px;
   }
 
+  .md\:gap-\[40px_40px\] {
+    gap: 40px 40px;
+  }
+
   .md\:border-\[5px\] {
     border-width: 5px;
   }
@@ -2934,6 +2995,11 @@ video {
   .md\:py-\[95px\] {
     padding-top: 95px;
     padding-bottom: 95px;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .md\:pl-\[88px\] {
@@ -2982,6 +3048,15 @@ video {
     font-size: 39px;
   }
 
+  .md\:text-\[40px\] {
+    font-size: 40px;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .md\:leading-\[48px\] {
     line-height: 48px;
   }
@@ -2996,6 +3071,14 @@ video {
 
   .md\:leading-normal {
     line-height: 1.5;
+  }
+
+  .md\:leading-\[32\.4px\] {
+    line-height: 32.4px;
+  }
+
+  .md\:leading-\[72\.0px\] {
+    line-height: 72.0px;
   }
 
   .md\:tracking-\[-3\.30px\] {
