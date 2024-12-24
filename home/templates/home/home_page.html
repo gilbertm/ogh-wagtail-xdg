@@ -958,8 +958,6 @@
           class="absolute top-0 left-0 font-poppins font-bold text-[#ececec] text-sm md:text-[15px] tracking-[0] leading-normal">
           YOUR NAME
         </label>
-        <img class="absolute w-full md:w-[619px] h-0.5 top-[60px] left-0 object-cover bg-[#222222]"
-          alt="Enter Your Name" src="{% static 'img/form/input-name.svg' %}" />
         {{ form.name|add_class:"absolute top-[33px] left-0 font-mulish font-normal text-[#c1c1c1] text-xs md:text-[13.1px] tracking-[0] leading-normal bg-transparent w-full outline-none" }}
         {% if form.name.errors %}
         <ul class="error-list text-red-500 text-sm mt-1">
@@ -968,6 +966,8 @@
           {% endfor %}
         </ul>
         {% endif %}
+        <img class="absolute bottom-0 left-0 right-0 h-[2px] w-full object-cover bg-[#222222]"
+        alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
       </div>
 
       <div class="relative w-full md:w-[618.9px] h-[61.89px] bg-transparent">
@@ -975,8 +975,6 @@
           class="absolute top-0 left-0 font-poppins font-bold text-[#ececec] text-sm md:text-[15px] tracking-[0] leading-normal">
           YOUR EMAIL
         </label>
-        <img class="absolute w-full md:w-[619px] h-0.5 top-[60px] left-0 object-cover bg-[#222222]"
-          alt="Enter Your Email" src="{% static 'img/form/input-name.svg' %}" />
         {{ form.email|add_class:"absolute top-[33px] left-0 font-mulish font-normal text-[#c1c1c1] text-xs md:text-[13.1px] tracking-[0] leading-normal bg-transparent w-full outline-none" }}
         {% if form.email.errors %}
         <ul class="error-list text-red-500 text-sm mt-1">
@@ -985,15 +983,15 @@
           {% endfor %}
         </ul>
         {% endif %}
+        <img class="absolute bottom-0 left-0 right-0 h-[2px] w-full object-cover bg-[#222222]"
+        alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
       </div>
 
       <div class="relative w-full md:w-[618.9px] h-[61.89px] bg-transparent">
         <label for="{{ form.phone.id_for_label }}"
           class="absolute top-0 left-0 font-poppins font-bold text-[#ececec] text-sm md:text-[15px] tracking-[0] leading-normal">
           YOUR PHONE
-        </label>
-        <img class="absolute w-full md:w-[619px] h-0.5 top-[60px] left-0 object-cover bg-[#222222]"
-          alt="Enter Your Phone" src="{% static 'img/form/input-name.svg' %}" />
+      </label>
         {{ form.phone|add_class:"absolute top-[33px] left-0 font-mulish font-normal text-[#c1c1c1] text-xs md:text-[13.1px] tracking-[0] leading-normal bg-transparent w-full outline-none" }}
         {% if form.phone.errors %}
         <ul class="error-list text-red-500 text-sm mt-1">
@@ -1002,6 +1000,8 @@
           {% endfor %}
         </ul>
         {% endif %}
+        <img class="absolute bottom-0 left-0 right-0 h-[2px] w-full object-cover bg-[#222222]"
+        alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
       </div>
 
       <div class="relative w-full md:w-[618.9px] h-[61.89px] bg-transparent">
@@ -1009,8 +1009,6 @@
           class="absolute top-0 left-0 font-poppins font-bold text-[#ececec] text-sm md:text-[15px] tracking-[0] leading-normal">
           SELECT DATE
         </label>
-        <img class="absolute w-full md:w-[619px] h-0.5 top-[60px] left-0 object-cover bg-[#222222]"
-          alt="Select Date" src="{% static 'img/form/input-name.svg' %}" />
         {{ form.date|add_class:"absolute top-[33px] left-0 font-mulish font-normal text-[#c1c1c1] text-xs md:text-[13.1px] tracking-[0] leading-normal bg-transparent w-full outline-none" }}
         {% if form.date.errors %}
         <ul class="error-list text-red-500 text-sm mt-1">
@@ -1019,6 +1017,8 @@
           {% endfor %}
         </ul>
         {% endif %}
+        <img class="absolute bottom-0 left-0 right-0 h-[2px] w-full object-cover bg-[#222222]"
+        alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
       </div>
 
       <div class="relative w-full md:w-[618.9px] h-[61.89px] bg-transparent">
@@ -1026,9 +1026,7 @@
           class="absolute top-0 left-0 font-poppins font-bold text-[#ececec] text-sm md:text-[15px] tracking-[0] leading-normal">
           SELECT TIME
         </label>
-        <img class="absolute w-full md:w-[619px] h-0.5 top-[60px] left-0 object-cover bg-[#222222]"
-          alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.time|add_class:"absolute top-[33px] left-0 font-mulish font-normal text-[#c1c1c1] text-xs md:text-[13.1px] tracking-[0] leading-normal bg-transparent w-full outline-none" }}
+         {{ form.time|add_class:"absolute top-[33px] left-0 font-mulish font-normal text-[#c1c1c1] text-xs md:text-[13.1px] tracking-[0] leading-normal bg-transparent w-full outline-none" }}
         {% if form.time.errors %}
         <ul class="error-list text-red-500 text-sm mt-1">
           {% for error in form.time.errors %}
@@ -1036,23 +1034,22 @@
           {% endfor %}
         </ul>
         {% endif %}
+        <img class="absolute bottom-0 left-0 right-0 h-[2px] w-full object-cover bg-[#222222]"
+        alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
       </div>
 
-      <div class="relative w-full md:w-[618.9px] h-[61.89px] bg-transparent">
+      <div class="form-your-message relative w-full md:w-[618.9px] min-h-[61.89px] bg-transparent flex flex-col">
         <label for="{{ form.message.id_for_label }}"
           class="absolute top-0 left-0 font-poppins font-bold text-[#ececec] text-sm md:text-[15px] tracking-[0] leading-normal">
           YOUR MESSAGE
         </label>
-        <img class="absolute w-full md:w-[619px] h-0.5 top-[60px] left-0 object-cover bg-[#222222]"
-          alt="Describe Your Message" src="{% static 'img/form/input-name.svg' %}" />
-        {{ form.message|add_class:"absolute top-[33px] left-0 font-mulish font-normal text-[#c1c1c1] text-xs md:text-[13.1px] tracking-[0] leading-normal bg-transparent w-full outline-none" }}
-        {% if form.message.errors %}
-        <ul class="error-list text-red-500 text-sm mt-1">
-          {% for error in form.message.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
+        <div class="relative flex-grow">
+          <textarea name="{{ form.message.name }}" id="{{ form.message.id_for_label }}" rows="1"
+            class="w-full bg-transparent font-poppins text-[#ececec] text-sm md:text-[15px] tracking-[0] leading-normal mt-8 focus:outline-none resize-none"
+            oninput="this.parentNode.dataset.replicatedValue = this.value; this.rows = this.value.split('\n').length || 1"></textarea>
+          <img class="absolute bottom-0 left-0 right-0 h-[2px] w-full object-cover bg-[#222222]"
+          alt="Select Time" src="{% static 'img/form/input-name.svg' %}" />
+        </div>
       </div>
 
       <div class="w-[210.99px] h-[79.71px] items-center justify-center relative cursor-pointer hover:opacity-90 transition-opacity">

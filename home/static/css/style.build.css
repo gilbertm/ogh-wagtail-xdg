@@ -738,6 +738,10 @@ video {
   top: 9px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -881,6 +885,10 @@ video {
 
 .mt-\[90px\] {
   margin-top: 90px;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .block {
@@ -1147,6 +1155,10 @@ video {
   height: 32px;
 }
 
+.h-\[2px\] {
+  height: 2px;
+}
+
 .min-h-\[400px\] {
   min-height: 400px;
 }
@@ -1157,6 +1169,10 @@ video {
 
 .min-h-\[800px\] {
   min-height: 800px;
+}
+
+.min-h-\[61\.89px\] {
+  min-height: 61.89px;
 }
 
 .\!w-2 {
@@ -1448,6 +1464,10 @@ video {
   flex: 0 0 auto;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .grow {
   flex-grow: 1;
 }
@@ -1464,6 +1484,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.resize-none {
+  resize: none;
 }
 
 .grid-cols-1 {
@@ -2674,6 +2698,11 @@ video {
 
 .hover\:opacity-90:hover {
   opacity: 0.9;
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .group:hover .group-hover\:visible {
