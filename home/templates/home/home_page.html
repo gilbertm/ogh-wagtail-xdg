@@ -548,7 +548,6 @@
                   class="relative w-fit mt-[-1.00px] font-ibm-plex-sans font-bold text-[#c2ae8b] text-sm text-center tracking-[2.80px] leading-[19.6px] whitespace-nowrap">
                   HOME SERVICE
                 </div>
-
               </div>
 
               <div
@@ -558,7 +557,7 @@
             </div>
           </div>
 
-          <div class="inline-flex items-center gap-6 relative flex-[0_0_auto] mr-[-1.00px]">
+          <div class="inline-flex items-center gap-6 relative flex-[0_0_auto] mr-[-1.00px] md:mt-0 mt-4 md:ml-auto">
             <div
               class="relative w-fit font-ibm-plex-sans font-bold text-white text-sm tracking-[2.80px] leading-[19.6px] whitespace-nowrap">
               MAKE AN APPOINTMENT
@@ -698,16 +697,16 @@
           </div>
 
           <div class="relative w-[288.94px] h-[20.52px]">
-            <div
-              class="absolute w-[251px] top-0 left-0 [font-family:'Mulish',Helvetica] font-normal text-[#606060] text-[15.1px] tracking-[0] leading-[20.7px]">
+            <p
+              class="absolute w-[251px] top-0 left-0 [font-family:'Mulish',Helvetica] font-normal text-[#ececec] text-[15.1px] tracking-[0] leading-[20.7px]">
               Scelerisque eleifend donec pretium
-            </div>
+            </p>
 
             <div
               class="relative w-4 h-[22px] bg-[#161616] !h-[21px] !absolute !left-[276px] !bg-[unset] !w-[13px] !top-0">
               <div
-                class="absolute top-0 left-0 font-[FontAwesome] font-normal text-[#ececec] text-base tracking-[0] leading-[22px] whitespace-nowrap !text-[#606060] !text-[6px] !-left-px !leading-[20.7px]">
-                
+                class="absolute top-0 left-0 font-[FontAwesome] font-normal text-[#ececec] text-base tracking-[0] leading-[22px] whitespace-nowrap !text-[6px] !-left-px !leading-[20.7px]">
+                
               </div>
             </div>
           </div>
@@ -824,15 +823,15 @@
 
           <div class="relative w-[288.94px] h-[20.52px]">
             <p
-              class="absolute w-[251px] top-0 left-0 [font-family:'Mulish',Helvetica] font-normal text-[#ececec] text-[15.1px] tracking-[0] leading-[20.7px]">
+              class="absolute w-[251px] top-0 left-0 [font-family:'Mulish',Helvetica] font-normal text-[#606060] text-[15.1px] tracking-[0] leading-[20.7px]">
               Eget sit amet tellus cras adipiscing
             </p>
 
             <div
               class="relative w-4 h-[22px] bg-[#161616] !h-[21px] !absolute !left-[276px] !bg-[unset] !w-[13px] !top-0">
               <div
-                class="absolute top-0 left-0 font-[FontAwesome] font-normal text-[#ececec] text-base tracking-[0] leading-[22px] whitespace-nowrap !text-[6px] !-left-px !leading-[20.7px]">
-                
+                class="absolute top-0 left-0 font-[FontAwesome] font-normal text-[#ececec] text-base tracking-[0] leading-[22px] whitespace-nowrap !text-[#606060] !text-[6px] !-left-px !leading-[20.7px]">
+                
               </div>
             </div>
           </div>
@@ -853,6 +852,7 @@
 
     </div>
   </section>
+ 
   {% comment %}
   Photos
   {% endcomment %}
@@ -1092,5 +1092,142 @@
   </section>
   
 
+  {% comment %}
+  Footer
+  {% endcomment %}
+  <section class="footer px-5 md:px-0 text-left mx-auto mt-[40px] md:mt-[80px] w-full md:w-[1440px] min-h-[800px] md:h-[1049px] overflow-hidden">
+    <div class="relative h-auto md:h-[1165px] flex flex-col md:block">
+      <div class="xdg-contact-address flex flex-col items-start md:justify-between lg:items-start gap-8 md:absolute lg:top-[524px] lg:left-20 mt-10 lg:mt-0 w-full md:w-[80%] lg:w-auto md:mx-auto lg:mx-0">
+        <img class="w-[120px] md:w-[163px] h-6 order-1 md:order-1 lg:order-none lg:absolute lg:top-[-366px]" alt="XDG Supercar Garage Patterns"
+          src="{% static 'img/footer/vector.svg' %}" />
+
+        <div class="flex flex-col gap-8 order-2 md:order-2 lg:order-none">
+          <div class="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
+            <div class="relative w-fit mt-[-1.00px] font-ibm-plex-sans font-bold text-[#84848b] text-xs tracking-[2.40px] leading-[16.8px] whitespace-nowrap">
+              EMAIL ADDRESS
+            </div>
+            <div class="relative w-fit font-poppins font-medium text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+              sample@xdg.com
+            </div>
+          </div>
+
+          <div class="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
+            <div class="relative w-fit mt-[-1.00px] font-ibm-plex-sans font-bold text-[#84848b] text-xs tracking-[2.40px] leading-[16.8px] whitespace-nowrap">
+              PHONE
+            </div>
+            <div class="relative w-fit font-poppins font-medium text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+              +971 50 000 0000
+            </div>
+          </div>
+
+          <div class="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
+            <div class="relative w-fit mt-[-1.00px] font-ibm-plex-sans font-bold text-[#84848b] text-xs tracking-[2.40px] leading-[16.8px] whitespace-nowrap">
+              OFFICE
+            </div>
+            <p class="relative w-fit font-poppins font-medium text-white text-base tracking-[0] leading-[22.4px]">
+              DIP2 - Dubai Investment Park - 2 - Dubai<br />United Arab of Emirates
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col w-full md:w-[522px] h-auto md:h-[1007px] items-start gap-10 md:gap-[120px] md:absolute lg:top-[158px] md:left-[710px] mt-10 md:mt-0">
+        <div class="flex flex-col items-start gap-10 md:gap-[120px] relative self-stretch w-full flex-[0_0_auto]">
+          <div class="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-10 w-full">
+            <div class="col-span-1">
+              <div class="inline-flex flex-col gap-8 items-start">
+                <div class="relative w-fit mt-[-1.00px] font-orbitron font-bold text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                  Home
+                </div>
+                <div class="inline-flex flex-col items-start gap-5">
+                  <div class="relative self-stretch mt-[-1.00px] font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Solutions
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    E-Cars
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Garage
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Support
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    About us
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-1">
+              <div class="inline-flex flex-col gap-8 items-start">
+                <div class="relative w-fit mt-[-1.00px] font-orbitron font-bold text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                  Resource
+                </div>
+                <div class="inline-flex flex-col items-start gap-5">
+                  <div class="relative self-stretch mt-[-1.00px] font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Newsletter
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Cookies
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Terms Conditions
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Spesification
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-10 w-full">
+            <div class="col-span-1">
+              <div class="inline-flex flex-col gap-8 items-start">
+                <div class="relative w-fit mt-[-1.00px] font-orbitron font-bold text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                  Services
+                </div>
+                <div class="inline-flex flex-col items-start gap-5">
+                  <div class="relative self-stretch mt-[-1.00px] font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Engine
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Steering
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Brake
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Battery
+                  </div>
+                  <div class="relative self-stretch font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    Cooling Sym
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-1">
+              <div class="inline-flex flex-col gap-8 items-start">
+                <div class="relative w-fit mt-[-1.00px] font-orbitron font-bold text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                  Follow us
+                </div>
+                <div class="inline-flex flex-col items-start gap-5">
+                  <div class="relative self-stretch mt-[-1.00px] font-ibm-plex-sans font-normal text-[#83838a] text-base tracking-[-0.32px] leading-[22.4px]">
+                    <img class="relative flex-[0_0_auto]" alt="Social media" src="{% static 'img/footer/list.svg' %}" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img class="absolute w-full md:w-[1440px] h-full md:h-[1049px] top-0 left-0 -z-10" alt="Pattern"
+        src="{% static 'img/footer/pattern.svg' %}" />
+    </div>
+  </section>
+  
   {% endblock content %}
 </div>
