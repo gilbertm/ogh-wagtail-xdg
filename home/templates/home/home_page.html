@@ -24,14 +24,14 @@
     visibility: visible;
   }
 
-  .trigger-our-services {
+  .menu-trigger {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
   }
 
-  .trigger-our-services::after {
+  .menu-trigger::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -43,19 +43,19 @@
     transition: transform 0.3s ease;
   }
 
-  .trigger-our-services:hover {
+  .menu-trigger:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
-  .trigger-our-services:hover::after {
+  .menu-trigger:hover::after {
     transform: translateX(0);
   }
 
   .menu-close {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 3rem;
+    right: 3rem;
     width: 32px;
     height: 32px;
     cursor: pointer;
@@ -93,7 +93,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(17, 17, 17, 0.9);
+    background-color: rgba(17, 17, 17, 0.5);
     opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 40;
@@ -389,7 +389,7 @@
   {% comment %}
   Services
   {% endcomment %}
-  <section
+  <section id="our-services-auto"
     class="services-auto p-5 md:p-0 text-left mx-auto mt-[40px] md:mt-[120px] grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[38px] md:w-[1280px] justify-start items-start">
     <div class="service-1 cursor-pointer w-full lg:w-[400.94px] h-[274.82px] relative group">
       <img class="relative w-full md:w-[400.94px] h-[2px] object-cover group-hover:hidden" alt="Line"
@@ -1446,7 +1446,7 @@
     // Define the mapping of triggers to target sections
     const sectionMappings = [
       { trigger: 'trigger-our-services', target: 'our-services' },
-      { trigger: 'trigger-about-us', target: 'about-us' },
+      { trigger: 'trigger-our-services-auto', target: 'our-services-auto' },
       { trigger: 'trigger-contact', target: 'contact' },
       // Add more mappings as needed
     ];
