@@ -76,7 +76,7 @@
                 </div>
               </div>
 
-              <div class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
+              <div class="hero-description-wrapper inline-flex items-center gap-6 relative flex-[0_0_auto]" onclick="openVideoPopup(0)">
                 <div
                   class="hero-description-subtitle relative w-fit font-ibm-plex-sans font-bold text-white text-sm text-center tracking-[2.80px] leading-[19.6px] whitespace-nowrap">
                   TAKE A TOUR
@@ -90,6 +90,67 @@
                   </svg>
                 </div>
               </div>
+
+              <!-- Video Popup -->
+              <div id="videoPopup" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="relative w-full max-w-4xl mx-4">
+                  <!-- 16:9 aspect ratio wrapper -->
+                  <div class="relative pt-[56.25%]">
+                    <div id="videoContainer" class="absolute inset-0">
+                      <!-- Video iframe will be inserted here via JavaScript -->
+                    </div>
+                  </div>
+                  <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white text-xl font-bold p-2">&times; Close</button>
+                </div>
+              </div>
+
+              <script>
+                let autoRotateInterval;
+
+                function openVideoPopup(index) {
+                  const popup = document.getElementById('videoPopup');
+                  const videoContainer = document.getElementById('videoContainer');
+                  const videoUrl = heroContent[index].videoUrl;
+                  
+                  if (!videoUrl) return;
+                  
+                  // Pause the hero animation
+                  if (autoRotateInterval) {
+                    clearInterval(autoRotateInterval);
+                  }
+                  
+                  let videoElement;
+                  
+                  if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+                    const videoId = videoUrl.split('v=')[1] || videoUrl.split('/').pop();
+                    videoElement = `<iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                  } else {
+                    videoElement = `<video class="absolute inset-0 w-full h-full" controls><source src="${videoUrl}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                  }
+                  
+                  videoContainer.innerHTML = videoElement;
+                  popup.classList.remove('hidden');
+                  popup.classList.add('flex');
+                }
+
+                function closeVideoPopup() {
+                  const popup = document.getElementById('videoPopup');
+                  const videoContainer = document.getElementById('videoContainer');
+                  videoContainer.innerHTML = '';
+                  popup.classList.add('hidden');
+                  popup.classList.remove('flex');
+                  
+                  // Resume the hero animation
+                  startAutoRotate();
+                }
+
+                // Close popup when clicking outside the video
+                document.getElementById('videoPopup').addEventListener('click', function(e) {
+                  if (e.target === this) {
+                    closeVideoPopup();
+                  }
+                });
+              </script>
             </div>
           </div>
         </div>
@@ -157,7 +218,8 @@
       {
         background: "{% static 'img/home/cars/main-car.png' %}",
         title: "AUTO MAINTENANCE<br/>&amp; REPAIR SERVICE",
-        subtitle: "TAKE A TOUR"
+        subtitle: "TAKE A TOUR",
+        videoUrl: "https://www.youtube.com/watch?v=your_video_id"
       },
       {
         background: "{% static 'img/home/cars/car-2.jpg' %}",
@@ -242,20 +304,41 @@
       }
 
       // Add click event listeners to arrows
-      arrowLeft.addEventListener('click', () => updateHero('prev'));
-      arrowRight.addEventListener('click', () => updateHero('next'));
-
-      // Optional: Auto-rotate every 5 seconds
-      const autoRotateInterval = setInterval(() => {
-        updateHero('next');
-      }, 5000);
-
-      // Stop auto-rotate when user interacts with arrows
-      [arrowLeft, arrowRight].forEach(arrow => {
-        arrow.addEventListener('click', () => {
+      arrowLeft.addEventListener('click', () => {
+        if (autoRotateInterval) {
           clearInterval(autoRotateInterval);
-        });
+        }
+        updateHero('prev');
+        startAutoRotate();
       });
+      
+      arrowRight.addEventListener('click', () => {
+        if (autoRotateInterval) {
+          clearInterval(autoRotateInterval);
+        }
+        updateHero('next');
+        startAutoRotate();
+      });
+
+      // Start auto-rotate
+      function startAutoRotate() {
+        if (autoRotateInterval) {
+          clearInterval(autoRotateInterval);
+        }
+        autoRotateInterval = setInterval(() => {
+          updateHero('next');
+        }, 5000);
+      }
+
+      // Initialize first slide
+      const initialContent = heroContent[0];
+      currentBg.style.backgroundImage = `url('${initialContent.background}')`;
+      titleElement.innerHTML = initialContent.title;
+      subtitleElement.textContent = initialContent.subtitle;
+      heroDescription.style.opacity = '1';
+
+      // Start the auto-rotation
+      startAutoRotate();
     }).catch(error => {
       console.error('Error preloading images:', error);
     });
