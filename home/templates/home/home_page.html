@@ -24,6 +24,34 @@
     visibility: visible;
   }
 
+  .trigger-our-services {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trigger-our-services::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ffffff 0%, #4a4a4a 100%);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .trigger-our-services:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .trigger-our-services:hover::after {
+    transform: translateX(0);
+  }
+
   .menu-close {
     position: absolute;
     top: 2rem;
@@ -78,6 +106,21 @@
     visibility: visible;
   }
 
+  .section-visible {
+    animation: fadeInSection 0.5s ease forwards;
+  }
+
+  @keyframes fadeInSection {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   /* Custom scrollbar for the menu */
   .menu-wrapper::-webkit-scrollbar {
     width: 6px;
@@ -91,14 +134,55 @@
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
   }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(12, 15, 17, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 49;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .back-to-top::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+
+  .back-to-top:hover {
+    background: rgba(12, 15, 17, 1);
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 </style>
 {% endblock %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-
 <div class="main-wrapper">
+  <div class="back-to-top" title="Back to top"></div>
   {% comment %}
   header
   {% endcomment %}
@@ -114,7 +198,7 @@
   hero
   {% endcomment %}
   <section
-    class="w-screen h-[450px] md:h-[850px] bg-[url('{% static 'img/home/main-car.png' %}')] bg-cover bg-[50%_50%] md:bg-[100%_100%]"
+    class="w-full h-[450px] md:h-[850px] bg-[url('{% static 'img/home/main-car.png' %}')] bg-cover bg-[50%_50%] md:bg-[100%_100%]"
     style="background-image: url('{% static 'img/home/main-car.png' %}')">
     <div
       class="relative h-[450px] md:h-[850px] [background:linear-gradient(180deg,rgba(4,3,11,0.74)_0%,rgb(4,3,11)_100%)]">
@@ -182,7 +266,7 @@
                 class="inline-flex items-center justify-center p-2 md:p-4 relative flex-[0_0_auto] mt-[-5.00px] mb-[-5.00px] mr-[-5.00px] bg-[#c2ae8b] rounded-[1000px] overflow-hidden border-[5px] border-solid border-[#22222280]">
                 <svg class="!relative !w-3 !h-3 md:!w-6 md:!h-6" fill="none" viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="#ffffff" />
+                  <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white" />
                 </svg>
               </div>
             </div>
@@ -1356,7 +1440,16 @@
     const menuWrapper = document.querySelector('.menu-wrapper');
     const menuOverlay = document.querySelector('.menu-overlay');
     const menuClose = document.querySelector('.menu-close');
+    const backToTop = document.querySelector('.back-to-top');
     let isMenuOpen = false;
+
+    // Define the mapping of triggers to target sections
+    const sectionMappings = [
+      { trigger: 'trigger-our-services', target: 'our-services' },
+      { trigger: 'trigger-about-us', target: 'about-us' },
+      { trigger: 'trigger-contact', target: 'contact' },
+      // Add more mappings as needed
+    ];
 
     function toggleMenu() {
       isMenuOpen = !isMenuOpen;
@@ -1364,6 +1457,44 @@
       menuOverlay.classList.toggle('active', isMenuOpen);
     }
 
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        toggleMenu(); // Close the menu
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: 'smooth' });
+          section.classList.add('section-visible');
+          
+          // Remove the animation class after it completes
+          setTimeout(() => {
+            section.classList.remove('section-visible');
+          }, 500);
+        }, 300);
+      }
+    }
+
+    // Initialize all trigger mappings
+    sectionMappings.forEach(mapping => {
+      const triggers = document.querySelectorAll(`.${mapping.trigger}`);
+      triggers.forEach(trigger => {
+        // Click handler
+        trigger.addEventListener('click', () => scrollToSection(mapping.target));
+        
+        // Hover handler with delay
+        let hoverTimeout;
+        trigger.addEventListener('mouseenter', () => {
+          hoverTimeout = setTimeout(() => {
+            scrollToSection(mapping.target);
+          }, 1000); // 1 second hover delay
+        });
+        
+        trigger.addEventListener('mouseleave', () => {
+          clearTimeout(hoverTimeout);
+        });
+      });
+    });
+
+    // Menu toggle event listeners
     menuToggle.addEventListener('click', toggleMenu);
     menuOverlay.addEventListener('click', toggleMenu);
     menuClose.addEventListener('click', toggleMenu);
@@ -1374,6 +1505,30 @@
         toggleMenu();
       }
     });
+
+    // Back to top functionality
+    function toggleBackToTop() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Event listeners
+    backToTop.addEventListener('click', scrollToTop);
+    window.addEventListener('scroll', toggleBackToTop);
+
+    // Initial check for back to top button
+    toggleBackToTop();
   });
 </script>
 {% endblock %}
