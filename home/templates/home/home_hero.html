@@ -111,11 +111,142 @@
 
               <script>
                 let autoRotateInterval;
-                const videoUrl = "https://www.youtube.com/watch?v=your_video_id"; // Replace with your actual video URL
+                const heroContent = [
+                  {
+                    background: "{% static 'img/home/cars/main-car.png' %}",
+                    title: "AUTO MAINTENANCE<br/>&amp; REPAIR SERVICE",
+                    subtitle: "TAKE A TOUR",
+                    videoUrl: "https://www.youtube.com/watch?v=JaS7n6qKQe4"
+                  },
+                  {
+                    background: "{% static 'img/home/cars/car-2.jpg' %}",
+                    title: "LUXURY CAR<br/>DETAILING SERVICE",
+                    subtitle: "EXPLORE MORE",
+                    videoUrl: "https://www.youtube.com/watch?v=JaS7n6qKQe4"
+                  },
+                  {
+                    background: "{% static 'img/home/cars/car-3.jpg' %}",
+                    title: "PREMIUM CAR<br/>CUSTOMIZATION",
+                    subtitle: "DISCOVER NOW",
+                    videoUrl: "https://www.youtube.com/watch?v=JaS7n6qKQe4"
+                  },
+                  {
+                    background: "{% static 'img/home/cars/car-4.jpg' %}",
+                    title: "LUXURY CAR<br/>CUSTOMIZATION",
+                    subtitle: "EXPERIENCE LUXURY",
+                    videoUrl: "https://www.youtube.com/watch?v=JaS7n6qKQe4&"
+                  }
+                ];
+
+                let currentIndex = 0;
+                const heroSection = document.getElementById('hero');
+                const heroDescription = document.querySelector('.hero-description');
+                const titleElement = heroDescription.querySelector('.hero-description-title');
+                const subtitleElement = heroDescription.querySelector('.hero-description-subtitle');
+                const arrowLeft = document.querySelector('.arrow-left');
+                const arrowRight = document.querySelector('.arrow-right');
+                const currentBg = document.querySelector('.hero-bg.current');
+                const nextBg = document.querySelector('.hero-bg.next');
+
+                // Preload images
+                function preloadImages() {
+                  const imagePromises = heroContent.map(content => {
+                    return new Promise((resolve, reject) => {
+                      const img = new Image();
+                      img.onload = resolve;
+                      img.onerror = reject;
+                      img.src = content.background;
+                    });
+                  });
+
+                  return Promise.all(imagePromises);
+                }
+
+                // Initialize hero after images are preloaded
+                preloadImages().then(() => {
+                  console.log('All hero images preloaded');
+                  
+                  function updateHero(direction) {
+                    // Fade out current content
+                    heroDescription.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                      // Update index based on direction
+                      if (direction === 'next') {
+                        currentIndex = (currentIndex + 1) % heroContent.length;
+                      } else {
+                        currentIndex = (currentIndex - 1 + heroContent.length) % heroContent.length;
+                      }
+
+                      // Update content
+                      const content = heroContent[currentIndex];
+                      
+                      // Prepare next background
+                      nextBg.style.backgroundImage = `url('${content.background}')`;
+                      nextBg.classList.add('zooming-in');
+                      nextBg.style.opacity = '1';
+
+                      // Update text content
+                      titleElement.innerHTML = content.title;
+                      subtitleElement.textContent = content.subtitle;
+
+                      // After animation completes
+                      setTimeout(() => {
+                        // Reset for next transition
+                        currentBg.style.backgroundImage = `url('${content.background}')`;
+                        nextBg.style.opacity = '0';
+                        nextBg.classList.remove('zooming-in');
+                        
+                        // Fade in new content
+                        heroDescription.style.opacity = '1';
+                      }, 1500);
+                    }, 500);
+                  }
+
+                  // Add click event listeners to arrows
+                  arrowLeft.addEventListener('click', () => {
+                    if (autoRotateInterval) {
+                      clearInterval(autoRotateInterval);
+                    }
+                    updateHero('prev');
+                    startAutoRotate();
+                  });
+                  
+                  arrowRight.addEventListener('click', () => {
+                    if (autoRotateInterval) {
+                      clearInterval(autoRotateInterval);
+                    }
+                    updateHero('next');
+                    startAutoRotate();
+                  });
+
+                  // Start auto-rotate
+                  function startAutoRotate() {
+                    if (autoRotateInterval) {
+                      clearInterval(autoRotateInterval);
+                    }
+                    autoRotateInterval = setInterval(() => {
+                      updateHero('next');
+                    }, 5000);
+                  }
+
+                  // Initialize first slide
+                  const initialContent = heroContent[0];
+                  currentBg.style.backgroundImage = `url('${initialContent.background}')`;
+                  titleElement.innerHTML = initialContent.title;
+                  subtitleElement.textContent = initialContent.subtitle;
+                  heroDescription.style.opacity = '1';
+
+                  // Start the auto-rotation
+                  startAutoRotate();
+                }).catch(error => {
+                  console.error('Error preloading images:', error);
+                });
 
                 function openVideoPopup() {
                   const popup = document.getElementById('videoPopup');
                   const videoContainer = document.getElementById('videoContainer');
+                  const videoUrl = heroContent[currentIndex].videoUrl;
                   
                   if (!videoUrl) return;
                   
@@ -129,9 +260,24 @@
                   
                   if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
                     const videoId = videoUrl.split('v=')[1] || videoUrl.split('/').pop();
-                    videoElement = `<iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    videoElement = `<iframe 
+                      class="absolute inset-0 w-full h-full" 
+                      src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+                      allowfullscreen
+                    ></iframe>`;
                   } else {
-                    videoElement = `<video class="absolute inset-0 w-full h-full" controls><source src="${videoUrl}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                    videoElement = `<video 
+                      class="absolute inset-0 w-full h-full" 
+                      controls 
+                      controlsList="nodownload" 
+                      playsinline 
+                      autoplay
+                    >
+                      <source src="${videoUrl}" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>`;
                   }
                   
                   videoContainer.innerHTML = videoElement;
@@ -216,137 +362,3 @@
     animation: zoomIn 1.5s ease-in-out forwards;
   }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Hero content configuration
-    const heroContent = [
-      {
-        background: "{% static 'img/home/cars/main-car.png' %}",
-        title: "AUTO MAINTENANCE<br/>&amp; REPAIR SERVICE",
-        subtitle: "TAKE A TOUR",
-        videoUrl: "https://www.youtube.com/watch?v=your_video_id"
-      },
-      {
-        background: "{% static 'img/home/cars/car-2.jpg' %}",
-        title: "LUXURY CAR<br/>DETAILING SERVICE",
-        subtitle: "EXPLORE MORE"
-      },
-      {
-        background: "{% static 'img/home/cars/car-3.jpg' %}",
-        title: "PREMIUM CAR<br/>CUSTOMIZATION",
-        subtitle: "DISCOVER NOW"
-      },
-      {
-        background: "{% static 'img/home/cars/car-4.jpg' %}",
-        title: "LUXURY CAR<br/>CUSTOMIZATION",
-        subtitle: "EXPERIENCE LUXURY"
-      }
-    ];
-
-    let currentIndex = 0;
-    const heroSection = document.getElementById('hero');
-    const heroDescription = document.querySelector('.hero-description');
-    const titleElement = heroDescription.querySelector('.hero-description-title');
-    const subtitleElement = heroDescription.querySelector('.hero-description-subtitle');
-    const arrowLeft = document.querySelector('.arrow-left');
-    const arrowRight = document.querySelector('.arrow-right');
-    const currentBg = document.querySelector('.hero-bg.current');
-    const nextBg = document.querySelector('.hero-bg.next');
-
-    // Preload images
-    function preloadImages() {
-      const imagePromises = heroContent.map(content => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.onload = resolve;
-          img.onerror = reject;
-          img.src = content.background;
-        });
-      });
-
-      return Promise.all(imagePromises);
-    }
-
-    // Initialize hero after images are preloaded
-    preloadImages().then(() => {
-      console.log('All hero images preloaded');
-      
-      function updateHero(direction) {
-        // Fade out current content
-        heroDescription.style.opacity = '0';
-        
-        setTimeout(() => {
-          // Update index based on direction
-          if (direction === 'next') {
-            currentIndex = (currentIndex + 1) % heroContent.length;
-          } else {
-            currentIndex = (currentIndex - 1 + heroContent.length) % heroContent.length;
-          }
-
-          // Update content
-          const content = heroContent[currentIndex];
-          
-          // Prepare next background
-          nextBg.style.backgroundImage = `url('${content.background}')`;
-          nextBg.classList.add('zooming-in');
-          nextBg.style.opacity = '1';
-
-          // Update text content
-          titleElement.innerHTML = content.title;
-          subtitleElement.textContent = content.subtitle;
-
-          // After animation completes
-          setTimeout(() => {
-            // Reset for next transition
-            currentBg.style.backgroundImage = `url('${content.background}')`;
-            nextBg.style.opacity = '0';
-            nextBg.classList.remove('zooming-in');
-            
-            // Fade in new content
-            heroDescription.style.opacity = '1';
-          }, 1500);
-        }, 500);
-      }
-
-      // Add click event listeners to arrows
-      arrowLeft.addEventListener('click', () => {
-        if (autoRotateInterval) {
-          clearInterval(autoRotateInterval);
-        }
-        updateHero('prev');
-        startAutoRotate();
-      });
-      
-      arrowRight.addEventListener('click', () => {
-        if (autoRotateInterval) {
-          clearInterval(autoRotateInterval);
-        }
-        updateHero('next');
-        startAutoRotate();
-      });
-
-      // Start auto-rotate
-      function startAutoRotate() {
-        if (autoRotateInterval) {
-          clearInterval(autoRotateInterval);
-        }
-        autoRotateInterval = setInterval(() => {
-          updateHero('next');
-        }, 5000);
-      }
-
-      // Initialize first slide
-      const initialContent = heroContent[0];
-      currentBg.style.backgroundImage = `url('${initialContent.background}')`;
-      titleElement.innerHTML = initialContent.title;
-      subtitleElement.textContent = initialContent.subtitle;
-      heroDescription.style.opacity = '1';
-
-      // Start the auto-rotation
-      startAutoRotate();
-    }).catch(error => {
-      console.error('Error preloading images:', error);
-    });
-  });
-</script>
