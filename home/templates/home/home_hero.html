@@ -76,7 +76,7 @@
                 </div>
               </div>
 
-              <div class="hero-description-wrapper inline-flex items-center gap-6 relative flex-[0_0_auto]" onclick="openVideoPopup(0)">
+              <div class="hero-description-wrapper inline-flex items-center gap-6 relative flex-[0_0_auto] cursor-pointer" onclick="openVideoPopup()">
                 <div
                   class="hero-description-subtitle relative w-fit font-ibm-plex-sans font-bold text-white text-sm text-center tracking-[2.80px] leading-[19.6px] whitespace-nowrap">
                   TAKE A TOUR
@@ -100,23 +100,29 @@
                       <!-- Video iframe will be inserted here via JavaScript -->
                     </div>
                   </div>
-                  <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white text-xl font-bold p-2">&times; Close</button>
+                  <button onclick="closeVideoPopup()" class="absolute -top-12 right-0 bg-[#c2ae8b] hover:bg-[#a89577] transition-colors duration-300 rounded-full p-2 group">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                    <span class="absolute right-full mr-2 top-1/2 transform -translate-y-1/2 whitespace-nowrap text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Close Video</span>
+                  </button>
                 </div>
               </div>
 
               <script>
                 let autoRotateInterval;
+                const videoUrl = "https://www.youtube.com/watch?v=your_video_id"; // Replace with your actual video URL
 
-                function openVideoPopup(index) {
+                function openVideoPopup() {
                   const popup = document.getElementById('videoPopup');
                   const videoContainer = document.getElementById('videoContainer');
-                  const videoUrl = heroContent[index].videoUrl;
                   
                   if (!videoUrl) return;
                   
                   // Pause the hero animation
                   if (autoRotateInterval) {
                     clearInterval(autoRotateInterval);
+                    autoRotateInterval = null;
                   }
                   
                   let videoElement;
