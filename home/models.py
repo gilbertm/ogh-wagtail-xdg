@@ -2,6 +2,7 @@ from django.db import models
 from django.shortcuts import render
 from django import forms
 from django.core.validators import RegexValidator
+from wagtail.admin.panels import FieldPanel
 
 from wagtail.models import Page
 
@@ -10,7 +11,7 @@ class HomePage(Page):
     
     """Template"""
     template = "home/home_page.html"
-
+    
     """Form processing"""
     def serve(self, request):
         if request.method == "POST":
